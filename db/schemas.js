@@ -5,19 +5,14 @@ var Schema = mongoose.Schema;
 var PostSchema = new Schema({
   title: String,
   body: String,
+  userId: {type: Schema.Types.ObjectId, ref: 'User'},
   createdAt: { type : Date, default: new Date() }
 });
 
 var UserSchema = new Schema({
   name: String,
-  bio: String,
-  posts: [PostSchema]
+  bio: String
 });
-/*
-  It is helpful to reference rather than embed posts in user
-  so the PostTag model (join table) can reference the Post
-  more easily by it's Id
-*/
 
 var TagSchema = new Schema({
   kind: String
@@ -27,6 +22,11 @@ var PostTagSchema = new Schema({
   postId: {type: Schema.Types.ObjectId, ref: 'Post'},
   tagId: {type: Schema.Types.ObjectId, ref: 'Tag'}
 });
+
+/*
+  In general, referencing data makes
+  relationships easier to work with.
+*/
 
 module.exports = {
   PostSchema: PostSchema,
