@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "seed": "node db/seed.js",
-    "console": "node db/console.js"
+    "start": "node db/seeds.js && node db/console.js"
   },
   "author": "",
   "license": "ISC",
