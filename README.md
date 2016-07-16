@@ -1,5 +1,7 @@
 # Building an Associative Entity in Mongo
 
+Related blog [post](https://medium.com/@itsangaris/many-to-many-relationships-in-nosql-8c2b444e2b05#.au6xbv11s).
+
 ## Setup
 
 * Clone down the repo
